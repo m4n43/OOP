@@ -1,0 +1,121 @@
+package src;
+
+public class CanBo {
+    protected String Hoten;
+    protected int Namsinh;
+    protected String Gioitinh;
+    protected String Diachi;
+    protected int Hesoluong;
+    protected int Luongcoban = 2000000;
+    
+    public CanBo(String Hoten, int Namsinh, String Gioitinh, String Diachi, int Hesoluong) {
+        this.Hoten = Hoten;
+        this.Namsinh = Namsinh;
+        this.Gioitinh = Gioitinh;
+        this.Diachi = Diachi;
+        this.Hesoluong = Hesoluong;
+    }
+
+    public String getHoten() {
+        return Hoten;
+    }
+
+    public void setHoten(String Hoten) {
+        this.Hoten = Hoten;
+    }
+
+    public int getNamsinh() {
+        return Namsinh;
+    }
+
+    public void setNamsinh(int Namsinh) {
+        this.Namsinh = Namsinh;
+    }
+
+    public String getGioitinh() {
+        return Gioitinh;
+    }
+
+    public void setGioitinh(String Gioitinh) {
+        this.Gioitinh = Gioitinh;
+    }
+
+    public String getDiachi() {
+        return Diachi;
+    }
+
+    public void setDiachi(String Diachi) {
+        this.Diachi = Diachi;
+    }
+
+    public int getHesoluong() {
+        return Hesoluong;
+    }
+
+    public void setHesoluong(int Hesoluong) {
+        this.Hesoluong = Hesoluong;
+    }
+
+    public int getLuongcoban() {
+        return Luongcoban;
+    }
+
+    public void setLuongcoban(int Luongcoban) {
+        this.Luongcoban = Luongcoban;
+    }    
+    public void hienthi() {
+        System.out.print("Ho va ten: "+Hoten+"\nNam sinh: "+Namsinh+"\nGioi tinh: "+Gioitinh+"\nDia chi: "+Diachi+"\nHe so luong: "+Hesoluong);        
+    }
+}
+
+public class NhanVien extends CanBo {
+    private String Nganhdaotao;
+
+    public NhanVien(String Nganhdaotao, String Hoten, int Namsinh, String Gioitinh, String Diachi, int Hesoluong) {
+        super(Hoten, Namsinh, Gioitinh, Diachi, Hesoluong);
+        this.Nganhdaotao = Nganhdaotao;
+    }
+
+    public String getNganhdaotao() {
+        return Nganhdaotao;
+    }
+
+    public void setNganhdaotao(String Nganhdaotao) {
+        this.Nganhdaotao = Nganhdaotao;
+    }
+    
+    public int Luong(int Hesoluong, int Luongcoban) {
+        return Hesoluong*Luongcoban;
+    }
+    @Override
+    public void hienthi() {
+        super.hienthi();
+        System.out.print("\nNganh dao tao: "+Nganhdaotao+"\nLuong: "+Luong(Hesoluong, Luongcoban));
+    }
+}
+
+public class QuanLy extends CanBo {
+    private float Hesochucvu;
+
+    public QuanLy(float Hesochucvu, String Hoten, int Namsinh, String Gioitinh, String Diachi, int Hesoluong) {
+        super(Hoten, Namsinh, Gioitinh, Diachi, Hesoluong);
+        this.Hesochucvu = Hesochucvu;
+    }
+
+    public float getHesochucvu() {
+        return Hesochucvu;
+    }
+
+    public void setHesochucvu(float Hesochucvu) {
+        this.Hesochucvu = Hesochucvu;
+    }
+    private float Luong(int Hesoluong, int Luongcoban, float Hesochucvu) {
+        return Hesoluong*Luongcoban*(1+Hesochucvu);
+    }
+
+    @Override
+    public void hienthi() {
+        super.hienthi(); 
+        System.out.print("\nHe so chuc vu: "+Hesochucvu+"\nLuong: "+Luong(Hesoluong, Luongcoban, Hesochucvu));
+    }
+}
