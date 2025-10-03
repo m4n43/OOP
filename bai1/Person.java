@@ -1,19 +1,20 @@
 
 package bai1;
+
 public class Person {
     protected String hoTen;
     protected String ngaySinh;
     protected String diaChi;
     protected String gioiTinh;
 
+    public Person() {
+    }
+
     public Person(String hoTen, String ngaySinh, String diaChi, String gioiTinh) {
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
         this.diaChi = diaChi;
         this.gioiTinh = gioiTinh;
-    }
-
-    public Person() {
     }
 
     public String getHoTen() {
@@ -47,11 +48,17 @@ public class Person {
     public void setGioiTinh(String gioiTinh) {
         this.gioiTinh = gioiTinh;
     }
-    public void hienThi() {
+
+    @Override
+    public String toString() {
+        return "Person{" + "hoTen=" + hoTen + ", ngaySinh=" + ngaySinh + ", diaChi=" + diaChi + ", gioiTinh=" + gioiTinh + '}';
+    }
+    
+    public void hienThiThongTin() {
         System.out.println("Họ tên: "+hoTen);
         System.out.println("Ngày sinh: "+ngaySinh);
         System.out.println("Địa chỉ: "+diaChi);
         System.out.println("Giới tính: "+gioiTinh);
-        
     }
+    
 }
