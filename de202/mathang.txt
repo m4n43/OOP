@@ -1,0 +1,4 @@
+A-Cơm-101-1-10000-true
+A-Gà-102-3-20000-true
+U-Coca-101-2-6000-false
+U-Fanta-102-1-7000-true
